@@ -1,5 +1,5 @@
-emilybest878@hotmail.com
-# SomethingDiffie-rent
+Email: emilybest878@hotmail.com
+# Something Diffie-rent
 
 # Flag
 Flag: S3cR3T_D1fFi3_He11m4n_K3yZ_64
