@@ -20,3 +20,5 @@ Research methods of exchanging cyptographic keys over a public channel securely.
   * base64
 
 ## Walkthrough
+1. The user connects to the service with 'nc <ip> <port>'
+ 
