@@ -8,7 +8,7 @@ We recently found this TCP service on `<ip>` port number `<portnumber>` which as
 
 By Emily
 
-### Optional Hint
+#### Optional Hint
 Research methods of exchanging cyptographic keys over a public channel securely.
 
 ## Infrastructure
