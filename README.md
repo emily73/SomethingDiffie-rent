@@ -21,3 +21,4 @@ Research methods of exchanging cyptographic keys over a public channel securely.
 
 ## Walkthrough
 1. The user connects to the service with `nc <ip> <port>`
+ ![](WalkthroughImage1.png)
