@@ -11,7 +11,7 @@ By Emily
 # Infrastructure
 * Host the Python File
 
-* Python Modules
+* Python Modules Required:
   * socketserver
   * random
   * base64
