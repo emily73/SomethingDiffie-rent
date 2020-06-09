@@ -9,8 +9,8 @@ We recently found this TCP service on `<ip>` port number `<portnumber>` which as
 By Emily
 
 ## Infrastructure
+* Programming Language: Python
 * Host the Python File
-
 * Python Modules Required:
   * socketserver
   * random
