@@ -8,6 +8,9 @@ We recently found this TCP service on `<ip>` port number `<portnumber>` which as
 
 By Emily
 
+### Optional Hint
+Research methods of exchanging cyptographic keys over a public channel securely.
+
 ## Infrastructure
 * Programming Language: Python
 * Host the Python File (The TCP port it is hosted on can be changed within the script, it is currently set to 9999 for example purposes)
