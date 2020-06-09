@@ -22,5 +22,5 @@ Research methods of exchanging cyptographic keys over a public channel securely.
 ## Walkthrough
 1. The user connects to the service with `nc <ip> <port>`:
  ![](WalkthroughImage1.png)
-1. The user will now need to decode the base64 presented to them in step one. The command 'echo <base64> | base64 -d` can be used to complete this step:
+1. The user will now need to decode the base64 presented to them in step one. The command `echo <base64> | base64 -d` can be used to complete this step:
  ![](WalkthroughImage2.png)
