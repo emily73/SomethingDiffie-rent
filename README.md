@@ -9,5 +9,11 @@ We recently found this TCP service on `<ip>` port number `<portnumber>` which as
 By Emily
 
 # Infrastructure
+* Host the Python File
+
+* Python Modules
+  * socketserver
+  * random
+  * base64
 
 # Walkthrough
