@@ -18,7 +18,8 @@ Research methods of exchanging cyptographic keys over a public channel securely.
   * socketserver
   * random
   * base64
-
+## Risks
+To the best of my knowledge, there are no risks associated with this program.
 ## Walkthrough
 1. The user connects to the service with `nc <ip> <port>`:
  ![](WalkthroughImage1.png)
