@@ -44,9 +44,9 @@ Research methods of exchanging cyptographic keys over a public channel securely.
  Kb = 52^24 mod 373
  Kb = 236
  Secret Key = 236
-```
- (Note: the key will not always equal 236 as the numbers used in the calculation are randomised, and the Base64 changes accordingly.)
  
+  (Note: the key will not always equal 236 as the numbers used in the calculation are randomised, and the Base64 changes accordingly.)
+```
 1. The user will now enter the value of the secret key into the terminal (in this case 236), and the flag is output if the value entered is correct:
 ![](WalkthroughImage3.png)
 Flag: `S3cR3T_D1fFi3_He11m4n_K3yZ_64`
