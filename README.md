@@ -31,6 +31,7 @@ Research methods of exchanging cyptographic keys over a public channel securely.
  PublicKeyA = g^a mod n
  PublicKeyA = 51^35 mod 373
  PublicKeyA = 52
+ 
  The user would then work out Bob’s public key:
  PublicKeyB = g^b mod n
  PublicKeyB = 51^24 mod 373
@@ -42,6 +43,7 @@ Research methods of exchanging cyptographic keys over a public channel securely.
  Ka = PublicKeyB^a mod n
  Ka = 169^35 mod 373
  Ka = 236
+ 
  Kb = PublicKeyA^b mod n
  Kb = 52^24 mod 373
  Kb = 236
