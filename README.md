@@ -28,19 +28,21 @@ Research methods of exchanging cyptographic keys over a public channel securely.
 1. Using the numbers which have been retrieved from the base64, the user will carry out Diffie Hellman key exchange, where a = 35, b = 24, n is 373, and g is 51
 ```
  The user would first work out Alice’s public key:
- Public Key A = g^a mod n
- Public Key A = 51^35 mod 373
- Public Key A = 52
+ PublicKeyA = g^a mod n
+ PublicKeyA = 51^35 mod 373
+ PublicKeyA = 52
  The user would then work out Bob’s public key:
- Public Key B = g^b mod n
- Public Key B = 51^24 mod 373
- Public Key B = 169
+ PublicKeyB = g^b mod n
+ PublicKeyB = 51^24 mod 373
+ PublicKeyB = 169
  
  Next the user would work out the value of the key A and key B 
  (these should produce the same value and thus are the value of the secret
  key
+ Ka = PublicKeyB^a mod n
  Ka = 169^35 mod 373
  Ka = 236
+ Kb = PublicKeyA^b mod n
  Kb = 52^24 mod 373
  Kb = 236
  Secret Key = 236
