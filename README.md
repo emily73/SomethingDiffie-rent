@@ -25,7 +25,7 @@ Research methods of exchanging cyptographic keys over a public channel securely.
 1. The user will now need to decode the base64 presented to them in step one. The command `echo <base64> | base64 -d` can be used to complete this step:
  ![](WalkthroughImage2.png)
  However, the user may choose another tool which can decode base64
-1.Using the numbers which have been retrieved from the base64, the user will carry out Diffie Hellman key exchange, where a = 35, b = 24, n is 373, and g is 51
+1. Using the numbers which have been retrieved from the base64, the user will carry out Diffie Hellman key exchange, where a = 35, b = 24, n is 373, and g is 51
 ```
  The user would first work out Alice’s public key:
  Public Key A = g^a mod n
