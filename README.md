@@ -38,8 +38,7 @@ Research methods of exchanging cyptographic keys over a public channel securely.
  PublicKeyB = 169
  
  Next the user would work out the value of the key A and key B 
- (these should produce the same value and thus are the value of the secret
- key
+ (these should produce the same value and thus are the value of the secret key)
  Ka = PublicKeyB^a mod n
  Ka = 169^35 mod 373
  Ka = 236
