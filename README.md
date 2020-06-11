@@ -13,7 +13,8 @@ Research methods of exchanging cyptographic keys over a public channel securely.
 
 ## Infrastructure
 * Programming Language: Python
-* Host the Python File (The TCP port it is hosted on can be changed within the script, it is currently set to 9999 for example purposes)
+* Host the Python File, can be run with `python3 <program>`
+   (The TCP port it is hosted on can be changed within the script, it is currently set to 9999 for example purposes)
 * Python Modules Required:
   * socketserver
   * random
