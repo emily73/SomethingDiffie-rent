@@ -23,9 +23,9 @@ Primes = [101, 103, 107, 109, 113, 127, 131,
           883, 887, 907, 911, 919, 929, 937, 941,
           947, 953, 967, 971, 977, 983, 991, 997]
 
-class MyTCPHandler(socketserver.BaseRequestHandler):
-   
-    def handle(self):
+
+class MyTCPServer(socketserver.BaseRequestHandler):  # custom TCP Service class, must inherit socketserver.BaseRequestHandler
+    def handle(self):  # Override this class,
         keydata, key, B64Text = Base64Encode()
         # sends output containing the numbers (encoded in base64) to the user
         self.request.sendall(str(B64Text).encode("utf-8") + b"\n\nWhat is the secret key?\n")
@@ -58,10 +58,10 @@ def Base64Encode():
     return keydata, key, B64Text
 
 
+class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer): # Class names are arbitrary and must inherit both classes
+    pass
 if __name__ == "__main__":
-    # Create the server, binding to localhost on port 9999
-    HOST, PORT = "localhost", 9999
-    # Activate the server; this will keep running until you interrupt the program with Ctrl-C
-    with socketserver.TCPServer((HOST, PORT), MyTCPHandler) as server:
-         server.serve_forever()
- 
+    ip_port = ("127.0.0.1", 9999)  # TCP Address and port of the server
+
+    with socketserver.ThreadingTCPServer(ip_port, MyTCPServer) as server:
+        server.serve_forever()  # open TCP service
