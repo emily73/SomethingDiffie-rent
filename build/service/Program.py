@@ -1,10 +1,10 @@
 import socketserver
 import random
 import base64
-systemRandom = random.SystemRandom()
+SYSTEM_RANDOM = random.SystemRandom()
 
 # list of prime numbers
-Primes = [101, 103, 107, 109, 113, 127, 131,
+PRIMES = [101, 103, 107, 109, 113, 127, 131,
           137, 139, 149, 151, 157, 163, 167, 173,
           179, 181, 191, 193, 197, 199, 211, 223,
           227, 229, 233, 239, 241, 251, 257, 263,
@@ -26,42 +26,45 @@ Primes = [101, 103, 107, 109, 113, 127, 131,
 
 class MyTCPServer(socketserver.BaseRequestHandler):  # custom TCP Service class, must inherit socketserver.BaseRequestHandler
     def handle(self):  # Override this class,
-        keydata, key, B64Text = Base64Encode()
+        keydata, key, B64Text = Base64_Encode()
         # sends output containing the numbers (encoded in base64) to the user
         self.request.sendall(str(B64Text).encode("utf-8") + b"\n\nWhat is the secret key?\n")
         # self.request is the TCP socket connected to the client
         self.data = self.request.recv(1024).strip()
-        print("{} wrote:".format(self.client_address[0]))
-        print(self.data)
         if self.data == str(key).encode("utf-8"):
+            #if the user inputs the value of key, the following is printed server side:
+            print("Correct Attempt Received")
             # if the user inputs the value of key, the flag is produced
             self.request.sendall(b"\nCORRECT, " + self.data + b" is the secret key! \nFlag: S3cR3T_D1fFi3_He11m4n_K3yZ_64\n")
         else:
-            # if the input is not equal to key, the flag is not produced
+            # if the input is not equal to key, the following is printed server side:
+            print("Incorrect Attempt Received")
+            # if the input is not equal to key, the flag is not produced to the user
             self.request.sendall(b"INCORRECT\n")
 
-def NumberGeneration():
+def Number_Generation():
     # Generates all numbers to be used in the key exchange
-    a = systemRandom.randint(10,99)
-    b = systemRandom.randint(10,99)
-    n = random.choice(Primes)
-    g = systemRandom.randint(20,80)
+    a = SYSTEM_RANDOM.randint(10,99)
+    b = SYSTEM_RANDOM.randint(10,99)
+    n = random.choice(PRIMES)
+    g = SYSTEM_RANDOM.randint(20,80)
     # key is calculated
     k = pow(g,a*b,n)
     return [a,b,n,g], k
 
-def Base64Encode():
+def Base64_Encode():
     # produces the base64 text
-    keydata, key = NumberGeneration()
+    keydata, key = Number_Generation()
     TextToBeEncoded = (b"\nAlice's Private Key is: " + str(keydata[0]).encode("utf-8") + b"\nBob's Private Key is: " + str(keydata[1]).encode("utf-8") + b"\nThe prime number chosen is: " + str(keydata[2]).encode("utf-8") + b"\nThe generator number chosen is: " + str(keydata[3]).encode("utf-8"))
     B64Text = (base64.b64encode(TextToBeEncoded)).decode('utf-8')
     return keydata, key, B64Text
 
-
 class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer): # Class names are arbitrary and must inherit both classes
     pass
 if __name__ == "__main__":
-    ip_port = ("127.0.0.1", 9999)  # TCP Address and port of the server
+    # TCP Address and port of the server
+    ip_port = ("127.0.0.1", 9999)  
 
     with socketserver.ThreadingTCPServer(ip_port, MyTCPServer) as server:
-        server.serve_forever()  # open TCP service
+        # open TCP service
+        server.serve_forever()  
