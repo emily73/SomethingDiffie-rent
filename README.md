@@ -1,8 +1,6 @@
-Email: emilybest878@hotmail.com
+
 # Something Diffie-rent
 
-## Flag
-Flag: `S3cR3T_D1fFi3_He11m4n_K3yZ_64`
 ## Briefing
 We recently found this TCP service on `<ip> <portnumber>` which asks for a secret key. There appears to be an encoded message, but our agents couldn’t work out what it meant.  Can you decode it and work out the secret key to access the flag?
 
@@ -53,6 +51,4 @@ To the best of my knowledge, there are no risks associated with this program.
   (Note: the key will not always equal 236 as the numbers used in the calculation are randomised, 
   and the Base64 changes accordingly.)
 ```
-4. The user will now enter the value of the secret key into the terminal (in this case 236), and the flag is output if the value entered is correct:
-![](WalkthroughImage3.png)
-Flag: `S3cR3T_D1fFi3_He11m4n_K3yZ_64`
+4. The user will now enter the value of the secret key into the terminal (in this case 236), and the flag is output if the value entered is correct
